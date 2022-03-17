@@ -8,14 +8,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { HeaderComponent } from './header/header.component';
+import { UpdateComponent } from './update/update.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { HttpClientModule } from "@angular/common/http"
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ProductDetailComponent
+    HeaderComponent,
+    UpdateComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,8 +28,9 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     NgbModule,
     FormsModule,
     RouterModule.forRoot([
-      {path: "add", component: ProductDetailComponent}
-    ])
+      {path: "update/:id", component:UpdateComponent}
+    ]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
