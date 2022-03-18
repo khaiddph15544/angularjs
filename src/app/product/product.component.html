@@ -1,16 +1,19 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-    <p>{{ objProduct | json }}</p>
+
             <form #product="ngForm" action="" class="form" (ngSubmit)="onSubmit(product.value)">
                 <div class="form-group">
-                    <input type="text" class="form-control" [(ngModel)]="objProduct.name" name="name" placeholder="name">
+                    <input type="text" class="form-control" [(ngModel)]="objProduct.name" name="name"
+                        placeholder="name">
                 </div>
                 <div class="form-group mt-2">
-                    <input type="text" class="form-control" [(ngModel)]="objProduct.price" name="price" placeholder="price">
+                    <input type="text" class="form-control" [(ngModel)]="objProduct.price" name="price"
+                        placeholder="price">
                 </div>
                 <div class="form-group mt-2">
-                    <input type="text" class="form-control" [(ngModel)]="objProduct.desc" name="desc" placeholder="desc">
+                    <input type="text" class="form-control" [(ngModel)]="objProduct.desc" name="desc"
+                        placeholder="desc">
                 </div>
                 <div class="form-group mt-2">
                     <button class="btn btn-primary">Submit</button>

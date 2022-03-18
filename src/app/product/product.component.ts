@@ -38,14 +38,18 @@ export class ProductComponent implements OnInit {
       desc: 'Chính hãng'
     }
   ]
-  update(data: any){
+  update(data: any) {
     this.objProduct = {
       ...data,
       price: Number(data.price)
     }
   }
   onSubmit(product: any) {
-    if (this.objProduct.id == "") {
+    if (!this.onValidate(this.objProduct)) {
+      alert("Bạn phải nhập đầy đủ dữ liệu")
+      return;
+    }
+    if (this.objProduct.id === "") {
       //Thêm mới
       this.objProduct = {
         ...this.objProduct,
@@ -63,6 +67,13 @@ export class ProductComponent implements OnInit {
       price: 0,
       desc: ''
     }
+  }
+
+  onValidate(obj: any) {
+    if (!obj.name || !obj.price || !obj.desc) {
+      return false
+    }
+    return true;
   }
 
 }
