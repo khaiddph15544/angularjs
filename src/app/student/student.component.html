@@ -1,0 +1,62 @@
+<h1 class="color-red font-weight-bold text-center">Danh sách người dùng</h1>
+  <div class="container">
+    <input type="text" class="form-control w-50 m-auto" (input)="onSearch($event)" />
+    <a href="add" class="text-decoration-none">Thêm mới</a>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Tên</th>
+          <th>Tuổi</th>
+          <th>Số điện thoại</th>
+          <th>Email</th>
+          <th>Ảnh đại diện</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="filterStudent.length > 0 ">
+        <tr *ngFor="let student of filterStudent">
+          <td>{{ student.id }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.age }}</td>
+          <td>{{ student.phone }}</td>
+          <td>{{ student.email }}</td>
+          <td><img [src]="student.img" width="100"></td>
+          <td>
+            <button (click)="update(student)" class="btn">Cập nhật</button>
+            <button (click)="remove(student.id)" class="btn btn-danger">Xóa</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    
+    <h3 class="text-center">----------------------------------</h3>
+
+    <form #student="ngForm" (ngSubmit)="submitForm()" id="myform">
+      <div class="form-group mt-2">
+        <label for="exampleInputEmail1">Họ tên</label>
+        <input type="text" class="form-control" name="name" id="name" [(ngModel)]="objData.name">
+      </div>
+      <div class="form-group mt-2">
+        <label for="exampleInputEmail1">Tuổi</label>
+        <input type="text" class="form-control" name="age" id="age" [(ngModel)]="objData.age">
+      </div>
+      <div class="form-group mt-2">
+        <label label- for="exampleInputEmail1">Số điện thoại</label>
+        <input type="text" class="form-control" [(ngModel)]="objData.phone" name="phone" id="phone">
+      </div>
+      <div class="form-group mt-2">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="text" class="form-control" [(ngModel)]="objData.email" name="email" id="email">
+      </div>
+      <div class="form-group mt-2">
+        <label for="exampleInputEmail1">Image</label>
+        <!-- <input type="file" class="form-control" [(ngModel)]="objData.img" name="img" id="img"> -->
+        <input type="text" class="form-control" name="img" [(ngModel)]="objData.img">
+        <img src="" id="image" alt=""  width="107">
+      </div>
+        <input type="reset" value="reset" id="resetForm" hidden>
+        <button type="click" class="btn btn-primary mt-2">Submit</button>
+    </form>
+  </div>

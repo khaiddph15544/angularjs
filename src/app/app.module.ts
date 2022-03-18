@@ -8,19 +8,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from './header/header.component';
-import { UpdateComponent } from './update/update.component';
-import { AddProductComponent } from './add-product/add-product.component';
-import { HttpClientModule } from "@angular/common/http"
+import { HttpClientModule } from "@angular/common/http";
+import { ProductComponent } from './product/product.component';
+import { StudentComponent } from './student/student.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HeaderComponent,
-    UpdateComponent,
-    AddProductComponent,
+    ProductComponent,
+    StudentComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +26,7 @@ import { HttpClientModule } from "@angular/common/http"
     NgbModule,
     FormsModule,
     RouterModule.forRoot([
-      {path: "update/:id", component:UpdateComponent}
+      
     ]),
     HttpClientModule
   ],
