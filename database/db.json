@@ -32,5 +32,31 @@
       "email": "khaidang1123@gmail.com",
       "img": "ar"
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "iphone 13",
+      "price": 22500000,
+      "desc": "Chính hãng"
+    },
+    {
+      "id": 2,
+      "name": "Oppo Reno 21",
+      "price": "15000000",
+      "desc": "Chính hãng"
+    },
+    {
+      "id": 3,
+      "name": "Samsung Galaxy Note 20",
+      "price": 10000000,
+      "desc": "Chính hãng"
+    },
+    {
+      "name": "afeee",
+      "price": "12",
+      "desc": "sadasd",
+      "id": 4
+    }
   ]
 }

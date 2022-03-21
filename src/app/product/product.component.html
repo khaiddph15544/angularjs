@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-
+        <!-- <p>{{ product.value | json }}</p> -->
+        <!-- <div class="col-md-4">
             <form #product="ngForm" action="" class="form" (ngSubmit)="onSubmit(product.value)">
                 <div class="form-group">
                     <input type="text" class="form-control" [(ngModel)]="objProduct.name" name="name"
@@ -19,8 +19,11 @@
                     <button class="btn btn-primary">Submit</button>
                 </div>
             </form>
-        </div>
-        <div class="col-md-6">
+        </div> -->
+        <a routerLink="/product/create">
+            <button class="btn btn-primary">Thêm mới</button>
+        </a>
+        <div class="col-md-12">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -31,14 +34,19 @@
                         <th>Hành động</th>
                     </tr>
                 </thead>
-                <tbody *ngIf="products.length > 0">
-                    <tr *ngFor="let product of products">
+                <tbody>
+                    <tr *ngFor="let product of arrProduct">
                         <td>{{ product.id }}</td>
                         <td>{{ product.name }}</td>
                         <td>{{ product.price | currency : "VND" }}</td>
                         <td>{{ product.desc }}</td>
                         <td>
-                            <button class="btn btn-primary" (click)="update(product)">Sửa</button>
+                            <a [routerLink]="['/product/',product.id]">
+                                <button class="btn btn-success">Xem chi tiết</button>
+                            </a>
+                            <a [routerLink]="['/product', product.id, 'edit']">
+                                <button class="btn btn-primary" (click)="update(product)">Sửa</button>
+                            </a>
                             <button class="btn btn-danger">Xóa</button>
                         </td>
                     </tr>
