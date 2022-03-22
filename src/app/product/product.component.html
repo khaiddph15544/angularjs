@@ -45,9 +45,9 @@
                                 <button class="btn btn-success">Xem chi tiết</button>
                             </a>
                             <a [routerLink]="['/product', product.id, 'edit']">
-                                <button class="btn btn-primary" (click)="update(product)">Sửa</button>
+                                <button class="btn btn-primary" >Sửa</button>
                             </a>
-                            <button class="btn btn-danger">Xóa</button>
+                            <button class="btn btn-danger" (click)="remove(product.id)">Xóa</button>
                         </td>
                     </tr>
                 </tbody>

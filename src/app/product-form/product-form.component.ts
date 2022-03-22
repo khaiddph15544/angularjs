@@ -44,6 +44,5 @@ export class ProductFormComponent implements OnInit {
         this.route.navigate(['product'])
       })
     }
-    
   }
 }

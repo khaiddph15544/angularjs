@@ -21,4 +21,7 @@ export class ProductService {
   update(data:any): Observable<any>{
     return this.http.put(apiUrl+data.id, data)
   }
+  delete(id: Number | String): Observable<any>{
+    return this.http.delete(apiUrl+id)
+  }
 }
