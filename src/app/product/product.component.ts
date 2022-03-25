@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -11,6 +11,7 @@ export class ProductComponent implements OnInit {
   arrProduct: any
   constructor(
     private ps: ProductService,
+    private activeRoute: ActivatedRoute,
     private route: Router
   ) { }
 

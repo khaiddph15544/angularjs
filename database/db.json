@@ -35,10 +35,10 @@
   ],
   "products": [
     {
-      "id": 1,
       "name": "iphone 13",
       "price": 22500000,
-      "desc": "Chính hãng"
+      "desc": "Chính hãng",
+      "id": 1
     },
     {
       "id": 2,
